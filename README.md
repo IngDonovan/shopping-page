@@ -8,7 +8,7 @@ Este es un proyecto de una página de compras desarrollado con Vite, React y Tai
 - Lista de productos con información detallada.
 - Funcionalidad de búsqueda de productos.
 - Carrito de compras con capacidad para agregar y eliminar productos.
-- Integración con API de pago para procesar transacciones.
+- Integración con API de pago para procesar transacciones. (Ejemplo)
 
 ## Instalación
 
@@ -16,3 +16,13 @@ Este es un proyecto de una página de compras desarrollado con Vite, React y Tai
 
    ```shell
    git clone https://github.com/IngDonovan/shopping-page.git
+
+2. Navega al directorio del proyecto:
+
+   ```shell
+   cd shopping-page
+
+Instala las dependencias:
+
+   ```shell
+   npm install
