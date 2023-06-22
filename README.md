@@ -22,7 +22,7 @@ Este es un proyecto de una página de compras desarrollado con Vite, React y Tai
    ```shell
    cd shopping-page
 
-Instala las dependencias:
+3. Instala las dependencias:
 
    ```shell
    npm install
