@@ -1,84 +1,75 @@
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-    const activeStyle = 'underline';
+    const activeStyle = 'underline underline-offset-4';
+    const classlink = ({isActive}) => isActive ? activeStyle : undefined;
+
 
     return(
-        <nav className="flex justify-between items-center fixed z-10 w-full py-5 px-8 text-sm font-light">
+        <nav className="flex justify-between items-center fixed z-10 w-full py-5 px-8 text-sm font-light text-white bg-black">
             <ul className="flex items-center gap-3">
                 <li className="font-bold text-lg">
                     <NavLink to='/'
-                        className = {({isActive}) => 
-                        isActive ? activeStyle : undefined
-                        }>
+                        >
                         ShopING
                     </NavLink>
                 </li>
                 <li>
                     <NavLink to='/'
-                        className = {({isActive}) => 
-                        isActive ? activeStyle : undefined}>
+                        className = {classlink}>
                         All
                     </NavLink>
                 </li>
                 <li>
                     <NavLink to='/clothes'
-                        className = {({isActive}) => 
-                        isActive ? activeStyle : undefined}>
+                        className = {classlink}>
                         Clothes
                     </NavLink>
                 </li>
                 <li>
                     <NavLink to='/electronics'
-                        className = {({isActive}) => 
-                        isActive ? activeStyle : undefined}>
+                        className = {classlink}>
                         Electronics
                     </NavLink>
                 </li>
                 <li>
                     <NavLink to='/furnitures'
-                        className = {({isActive}) => 
-                        isActive ? activeStyle : undefined}>
+                        className = {classlink}>
                         Furnitures
                     </NavLink>
                 </li>
                 <li>
                     <NavLink to='/toys'
-                        className = {({isActive}) => 
-                        isActive ? activeStyle : undefined}>
+                        className = {classlink}>
                         Toys
                     </NavLink>
                 </li>
                 <li>
                     <NavLink to='/others'
-                        className = {({isActive}) => 
-                        isActive ? activeStyle : undefined}>
+                        className = {classlink}>
                         Others
                     </NavLink>
                 </li>
             </ul>
             <ul className="flex items-center gap-3">
-                <li>
+                <li className="text-white/40">
                     email@gmail.com
                 </li>
                 <li>
                     <NavLink to='/my-orders'
-                    className = {({isActive}) => 
-                    isActive ? activeStyle : undefined}>
+                    className = {classlink}>
                         My Orders
                     </NavLink>
                 </li>
                 <li>
                     <NavLink to='/my-account'
-                    className = {({isActive}) => 
-                    isActive ? activeStyle : undefined}>
+                    className = {classlink}>
                         My Account
                     </NavLink>
                 </li>
                 <li>
                     <NavLink to='/sign-in'
-                    className = {({isActive}) => 
-                    isActive ? activeStyle : undefined}>
+                    className = {classlink}>
                         Sign In
                     </NavLink>
                 </li>
