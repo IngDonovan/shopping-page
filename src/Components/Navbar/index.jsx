@@ -1,12 +1,19 @@
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
+    const activeStyle = {
+        textDecoration: "underline",
+    };
+
     return(
-        <nav>
-            <ul>
-                <li>
-                    <NavLink to='/'>
-                        Shopi
+        <nav className="flex justify-between items-center fixed z-10 w-full py-5 px-8 text-sm font-light">
+            <ul className="flex items-center gap-3">
+                <li className="font-bold text-lg">
+                    <NavLink to='/'
+                        style = {({isActive}) => 
+                        isActive ? activeStyle : undefined
+                        }>
+                        ShopING
                     </NavLink>
                 </li>
                 <li>
@@ -40,7 +47,7 @@ const Navbar = () => {
                     </NavLink>
                 </li>
             </ul>
-            <ul>
+            <ul className="flex items-center gap-3">
                 <li>
                     email@gmail.com
                 </li>
