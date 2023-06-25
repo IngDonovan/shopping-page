@@ -2,7 +2,7 @@ function NotFound() {
 
     return (
       <>
-        <div>
+        <div className="bg-gray-700 text-white">
             NotFound
         </div>
       </>

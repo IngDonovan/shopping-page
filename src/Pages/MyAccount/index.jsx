@@ -2,7 +2,7 @@ function MyAccount() {
 
     return (
       <>
-        <div>
+        <div className="bg-gray-700 text-white">
           MyAccount
         </div>
       </>

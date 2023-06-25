@@ -2,7 +2,7 @@ function MyOrder() {
 
     return (
       <>
-        <div>
+        <div className="bg-gray-700 text-white">
           MyOrder
         </div>
       </>
