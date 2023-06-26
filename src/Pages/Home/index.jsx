@@ -1,3 +1,4 @@
+import Card from "../../Components/Card";
 import Layout from "../../Components/layout";
 
 function Home() {
@@ -6,7 +7,9 @@ function Home() {
       <>
         <Layout>
           Home
+          <Card />
         </Layout>
+        
       </>
     )
   }
