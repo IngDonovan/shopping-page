@@ -5,7 +5,7 @@ const Card = ({data}) => {
                 <span className="absolute bottom-0 left-0 rounded-lg bg-[#212121]/60 text-xs m-2 px-3 py-0.5">{data.category}</span>
                 <img className="w-full h-full object-cover  rounded-lg"
                 src={data.image} alt="headphones" />
-                <button type="button" className="absolute top-0 right-0 m-2 flex justify-center items-center bg-[#212121] w-6 h-6 rounded-full text-white p-1">+</button>
+                <button type="button" className="absolute top-0 right-0 m-2 flex justify-center items-center bg-[#454545] w-7 h-7 rounded-full text-white text-xl shadow-[15px_15px_30px_rgba(25,25,25),-15px_-15px_30px_rgba(60,60,60)]">+</button>
             </figure>
             <p className="flex justify-between">
                 <span className="text-sm font-light mx-2 ">{data.title}</span>
