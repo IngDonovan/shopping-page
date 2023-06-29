@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { ShoppingCartContext } from "../../Context/intex";
+import { XMarkIcon } from '@heroicons/react/24/solid';
 
 const Card = ({data}) => {
     const { count, setCount} = useContext(ShoppingCartContext);
@@ -12,7 +13,7 @@ const Card = ({data}) => {
                 <button type="button" className="absolute top-0 right-0 m-2 flex justify-center items-center bg-[#454545] w-7 h-7 rounded-full text-white text-xl shadow-[15px_15px_30px_rgba(25,25,25),-15px_-15px_30px_rgba(60,60,60)]"
                 onClick={() => setCount(count + 1)}
                 >
-                    +
+                    <XMarkIcon className="h-6 w-6 text-white" />
                 </button>
             </figure>
             <p className="flex justify-between">
