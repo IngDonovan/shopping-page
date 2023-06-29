@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Card from "../../Components/Card";
 import Layout from "../../Components/layout";
 import { ApiUrl } from "../../Api";
+import ProductDetail from "../../Components/ProductDetail";
 
 function Home() {
 
@@ -34,7 +35,7 @@ function Home() {
           }
 
           </div>
-        
+        <ProductDetail />
       </Layout>
         
 
