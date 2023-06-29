@@ -4,13 +4,19 @@ export const ShoppingCartContext = createContext();
 
 export const ShoppingCartProvider = ({children}) => {
     const [count, setCount] = useState(0);
-    // console.log('Count: ', count);
+    const [isProductDetailOpen, setIsProductDetailOpen] = useState(false);
+    // const openProductDetail = () => setIsProductDetailOpen(true);
+    const toggleProductDetail = () =>  setIsProductDetailOpen(!isProductDetailOpen);
 
     return(
         <ShoppingCartContext.Provider 
             value={{
                 count,
                 setCount,
+                isProductDetailOpen,
+                setIsProductDetailOpen,
+                toggleProductDetail,
+
             }}
         >
             {children}
