@@ -13,7 +13,7 @@ const ProductDetail = () => {
                 <h2 className="font-mediunm text-xl">
                     Detail
                 </h2>
-                <span className="">
+                <span className="cursor-pointer">
                     <XMarkIcon className="h-6 w-6 text-white" 
                     onClick={toggleProductDetail}
                     />
