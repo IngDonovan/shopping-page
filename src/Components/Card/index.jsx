@@ -3,10 +3,11 @@ import { ShoppingCartContext } from "../../Context/index";
 import { PlusIcon } from '@heroicons/react/24/solid';
 
 const Card = ({data}) => {
-    const { count, setCount, toggleProductDetail} = useContext(ShoppingCartContext);
+    const { count, setCount, toggleProductDetail, setProductToShow} = useContext(ShoppingCartContext);
     
-    const showProduct = () => {
-        
+    const showProduct = (productDetail) => {
+        toggleProductDetail();
+        setProductToShow(productDetail);
     }
 
     return (
@@ -15,7 +16,7 @@ const Card = ({data}) => {
                 <span className="absolute bottom-0 left-0 rounded-lg bg-[#212121]/60 text-xs m-2 px-3 py-0.5">{data.category}</span>
                 <img className="w-full h-full object-cover  rounded-lg"
                 src={data.image} alt="headphones"
-                onClick={() => toggleProductDetail()}
+                onClick={() => showProduct(data)}
                 />
                 <button type="button" className="absolute top-0 right-0 m-2 flex justify-center items-center bg-[#454545] w-7 h-7 rounded-full text-white text-xl shadow-[15px_15px_30px_rgba(25,25,25),-15px_-15px_30px_rgba(60,60,60)]"
                 onClick={() => setCount(count + 1)}
@@ -24,7 +25,7 @@ const Card = ({data}) => {
                 </button>
             </figure>
             <p className="flex justify-between">
-                <span className="text-sm font-light mx-2 ">{data.title}</span>
+                <span className="text-sm font-light truncate mx-2 ">{data.title}</span>
                 <span className="text-lg font-medium mx-2">${data.price}</span>
             </p>
             
