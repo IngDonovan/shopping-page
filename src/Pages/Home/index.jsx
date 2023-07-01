@@ -25,7 +25,7 @@ function Home() {
   }, [])
     return (
        <Layout>
-          <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 m-8">
+          <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 my-8   ">
           {
             items?.map((item) => 
               (<Card key={item.id} data={item} />

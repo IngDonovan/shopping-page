@@ -11,7 +11,7 @@ const Card = ({data}) => {
     }
 
     return (
-        <article className="bg-[#454545] cursor-pointer w-56 h-60 rounded-lg shadow-[15px_15px_30px_rgba(25,25,25),-15px_-15px_30px_rgba(60,60,60)]">
+        <article className="bg-[#454545] cursor-pointer w-60 h-60 rounded-lg shadow-[15px_15px_30px_rgba(25,25,25),-15px_-15px_30px_rgba(60,60,60)]">
             <figure className="relative mb-2 w-full h-4/5">
                 <span className="absolute bottom-0 left-0 rounded-lg bg-[#212121]/60 text-xs m-2 px-3 py-0.5">{data.category}</span>
                 <img className="w-full h-full object-cover  rounded-lg"
