@@ -3,11 +3,23 @@ import { ShoppingCartContext } from "../../Context/index";
 import { PlusIcon } from '@heroicons/react/24/solid';
 
 const Card = ({data}) => {
-    const { count, setCount, toggleProductDetail, setProductToShow} = useContext(ShoppingCartContext);
+    const { 
+        count,
+        setCount,
+        toggleProductDetail,
+        setProductToShow,
+        cartProducts,
+        setCartProducts,
+    } = useContext(ShoppingCartContext);
     
     const showProduct = (productDetail) => {
         toggleProductDetail();
         setProductToShow(productDetail);
+    }
+
+    const addProductsToCart = (productData) => {
+        setCount(count + 1);
+        setCartProducts([...cartProducts, productData]);
     }
 
     return (
@@ -19,9 +31,9 @@ const Card = ({data}) => {
                 onClick={() => showProduct(data)}
                 />
                 <button type="button" className="absolute top-0 right-0 m-2 flex justify-center items-center bg-[#454545] w-7 h-7 rounded-full text-white text-xl shadow-[15px_15px_30px_rgba(25,25,25),-15px_-15px_30px_rgba(60,60,60)]"
-                onClick={() => setCount(count + 1)}
+                onClick={() => addProductsToCart(data)}
                 >
-                    <PlusIcon className="h-6 w-6 text-white" />
+                    <PlusIcon className="h-6 w-6 text-white"/>
                 </button>
             </figure>
             <p className="flex justify-between">
