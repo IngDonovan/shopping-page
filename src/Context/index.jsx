@@ -6,7 +6,7 @@ export const ShoppingCartProvider = ({children}) => {
     const [count, setCount] = useState(0);
 
     const [isProductDetailOpen, setIsProductDetailOpen] = useState(false);
-    // const openProductDetail = () => setIsProductDetailOpen(true);
+    
     const toggleProductDetail = () =>  setIsProductDetailOpen(!isProductDetailOpen);
 
     const [productToShow, setProductToShow] = useState({});

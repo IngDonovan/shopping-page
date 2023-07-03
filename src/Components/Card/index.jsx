@@ -18,6 +18,7 @@ const Card = ({data}) => {
     }
 
     const addProductsToCart = (productData) => {
+        
         setCount(count + 1);
         setCartProducts([...cartProducts, productData]);
     }
