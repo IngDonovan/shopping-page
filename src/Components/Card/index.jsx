@@ -10,10 +10,12 @@ const Card = ({data}) => {
         setProductToShow,
         cartProducts,
         setCartProducts,
-        toggleCheckoutSideMenu,
+        openCheckoutSideMenu,
+        closeCheckoutSideMenu,
     } = useContext(ShoppingCartContext);
     
     const showProduct = (productDetail) => {
+        closeCheckoutSideMenu();
         toggleProductDetail();
         setProductToShow(productDetail);
     }
@@ -22,7 +24,7 @@ const Card = ({data}) => {
         
         setCount(count + 1);
         setCartProducts([...cartProducts, productData]);
-        toggleCheckoutSideMenu();
+        openCheckoutSideMenu();
         
     }
 
