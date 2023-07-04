@@ -11,6 +11,16 @@
     "deploy": "vite build && gh-pages -d dist",
     "predeploy": "rm -rf dist"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IngDonovan/shopping-page.git"
+  },
+  "author": "Ing Donovan <rojasdrm03@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/IngDonovan/shopping-page/issues"
+  },
+  "homepage": "https://github.com/IngDonovan/shopping-page#readme",
   "dependencies": {
     "@heroicons/react": "^2.0.18",
     "react": "^18.2.0",
