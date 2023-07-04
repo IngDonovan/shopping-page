@@ -13,12 +13,13 @@ export const ShoppingCartProvider = ({children}) => {
      //CheckoutSideMenu · Open/close
      const [isCheckoutSideMenuOpen, setCheckoutSideMenuOpen] = useState(false);
      const toggleCheckoutSideMenu = () =>  setCheckoutSideMenuOpen(!isCheckoutSideMenuOpen);
+     
 
     //Product Detail · Show Product
     const [productToShow, setProductToShow] = useState({});
 
     //Shopping Cart · Add Products to cart
-    const [cartProducts, setCartProducts] = useState({});
+    const [cartProducts, setCartProducts] = useState([]);
     
     return(
         <ShoppingCartContext.Provider 
