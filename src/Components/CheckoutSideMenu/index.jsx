@@ -7,7 +7,7 @@ const CheckoutSideMenu = () => {
     const { isCheckoutSideMenuOpen, toggleCheckoutSideMenu } = useContext(ShoppingCartContext);
     
     return (
-        <aside className={`${isCheckoutSideMenuOpen ? 'flex' : 'hidden' } flex flex-col fixed right-0 bg-black/90 rounded-lg w-[360px] h-[calc(100vh-80px)] shadow-[15px_15px_30px_rgba(25,25,25),-15px_-15px_30px_rgba(60,60,60)]`}>
+        <aside className={`${isCheckoutSideMenuOpen ? 'flex' : 'hidden' } flex flex-col fixed right-0 bg-black/90 rounded-lg w-[360px] h-[calc(100vh-80px)] shadow-[15px_15px_30px_rgba(25,25,25),-15px_-15px_30px_rgba(60,60,60)] z-10`}>
             <div className="flex justify-between items-center text-white p-6">
                 <h2 className="font-mediunm text-xl">
                     My Order

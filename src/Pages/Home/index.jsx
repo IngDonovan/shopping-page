@@ -3,7 +3,8 @@ import Card from "../../Components/Card";
 import Layout from "../../Components/layout";
 import { ApiUrl } from "../../Api";
 import ProductDetail from "../../Components/ProductDetail";
-import CheckoutSideMenu from "../../Components/CheckoutSideMenu";
+
+
 
 function Home() {
 
@@ -35,8 +36,7 @@ function Home() {
           }
 
           </div>
-        <ProductDetail />
-        <CheckoutSideMenu />
+        <ProductDetail />        
       </Layout>
         
 
