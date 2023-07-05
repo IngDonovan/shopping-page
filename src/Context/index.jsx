@@ -12,7 +12,7 @@ export const ShoppingCartProvider = ({children}) => {
 
      //CheckoutSideMenu · Open/close
      const [isCheckoutSideMenuOpen, setIsCheckoutSideMenuOpen] = useState(false);
-    //  const toggleCheckoutSideMenu = () =>  setCheckoutSideMenuOpen(!isCheckoutSideMenuOpen);
+     const toggleCheckoutSideMenu = () =>  setIsCheckoutSideMenuOpen(!isCheckoutSideMenuOpen);
      const openCheckoutSideMenu = () => setIsCheckoutSideMenuOpen(true)
      const closeCheckoutSideMenu = () => setIsCheckoutSideMenuOpen(false)
      
@@ -22,20 +22,8 @@ export const ShoppingCartProvider = ({children}) => {
 
     //Shopping Cart · Add Products to cart
     const [cartProducts, setCartProducts] = useState([]);
-    // const onAdd = product => {
-	// 	const productExists = cartProducts.some(el => el.id === product.id); // dará true si el producto ya se encuentra en el carrito
 
-	// 	if (productExists) {
-	// 		// valida la existencia
-	// 		const productCart = cartProducts.find(el => el.id === product.id); // busca el producto
-	// 		productCart.quantity += 1; // aumenta la cantidad en 1
-	// 	} else {
-	// 		product.quantity = 1; // si el producto no está, le agrega la propiedad quantity con valor uno, y luego setea el carrito agregando ese producto
-	// 		setCartProducts([...cartProducts, product]);
-	// 	}
-	// 	setCount(count + 1);
-	// };
-    
+         
     return(
         <ShoppingCartContext.Provider 
             value={{
@@ -50,6 +38,7 @@ export const ShoppingCartProvider = ({children}) => {
                 setCartProducts,
                 isCheckoutSideMenuOpen,
                 setIsCheckoutSideMenuOpen,
+                toggleCheckoutSideMenu,
                 openCheckoutSideMenu,
                 closeCheckoutSideMenu,
             }}
