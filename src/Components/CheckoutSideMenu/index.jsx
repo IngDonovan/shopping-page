@@ -25,6 +25,7 @@ const CheckoutSideMenu = () => {
                 cartProducts.map((product) => (
                     <OrderCard 
                         key={product.id}
+                        id={product.id}
                         title={product.title}
                         imageUrl={product.image}
                         price={product.price}
