@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { ShoppingCartContext } from "../../Context/index";
 import OrderCard from '../OrderCard';
+import { totalPrice } from '../../Utils';
 import { XMarkIcon } from '@heroicons/react/24/solid';
 
 
@@ -20,8 +21,8 @@ const CheckoutSideMenu = () => {
     }
     
     return (
-        <aside className={`${isCheckoutSideMenuOpen ? 'flex' : 'hidden' } flex flex-col fixed right-0 bg-black/90 rounded-lg w-[360px] h-[calc(100vh-80px)] shadow-[15px_15px_30px_rgba(25,25,25),-15px_-15px_30px_rgba(60,60,60)] z-10`}>
-            <div className="flex justify-between items-center text-white p-6">
+        <aside className={`${isCheckoutSideMenuOpen ? 'flex' : 'hidden' } flex flex-col fixed right-0 bg-black/90 text-white rounded-lg w-[360px] h-[calc(100vh-80px)] shadow-[15px_15px_30px_rgba(25,25,25),-15px_-15px_30px_rgba(60,60,60)] z-10`}>
+            <div className="flex justify-between items-center p-6">
                 <h2 className="font-mediunm text-xl">
                     My Order
                 </h2>
@@ -46,6 +47,12 @@ const CheckoutSideMenu = () => {
                         />
                 ))
             }
+            </div>
+            <div className='px-6'>
+                <p>
+                    <span>Total</span>
+                    <span>${totalPrice(cartProducts)}</span>
+                </p>
             </div>
         </aside>
     )
