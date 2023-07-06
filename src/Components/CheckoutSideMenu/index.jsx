@@ -12,12 +12,27 @@ const CheckoutSideMenu = () => {
         cartProducts, 
         setCartProducts, 
         setCount,
+        order,
+        setOrder,
      } = useContext(ShoppingCartContext);
 
     const handleDelete = (id) => {
         const filteredProducts = cartProducts.filter(product => product.id != id);
         setCount(cartProducts.length - 1)
         setCartProducts(filteredProducts)
+    }
+
+    const handleCheckout = () => {
+        const orderToAdd = {
+            date: '06.07.23',
+            products: cartProducts,
+            totalProducts: (cartProducts.length),
+            totalPrice: totalPrice(cartProducts),
+        }
+        setOrder([...order, orderToAdd]);
+        console.log(orderToAdd);
+        setCartProducts([]);
+        setCount([]);
     }
     
     return (
@@ -53,6 +68,10 @@ const CheckoutSideMenu = () => {
                     <span className='font-light'>Total</span>
                     <span className='font-medium text-2xl'>${totalPrice(cartProducts)}</span>
                 </p>
+                <button
+                    onClick={() => handleCheckout()}>
+                    Checkout
+                </button>
             </div>
         </aside>
     )
