@@ -5,10 +5,17 @@ import { XMarkIcon } from '@heroicons/react/24/solid';
 
 
 const CheckoutSideMenu = () => {
-    const { isCheckoutSideMenuOpen, closeCheckoutSideMenu, cartProducts, setCartProducts } = useContext(ShoppingCartContext);
+    const { 
+        isCheckoutSideMenuOpen,
+        closeCheckoutSideMenu, 
+        cartProducts, 
+        setCartProducts, 
+        setCount,
+     } = useContext(ShoppingCartContext);
 
     const handleDelete = (id) => {
         const filteredProducts = cartProducts.filter(product => product.id != id);
+        setCount(cartProducts.length - 1)
         setCartProducts(filteredProducts)
     }
     
