@@ -50,7 +50,9 @@ const Card = ({data}) => {
         // setCartProducts([...cartProducts, productData]);
         openCheckoutSideMenu();
 
-    }
+    };
+
+
 
 
     return (

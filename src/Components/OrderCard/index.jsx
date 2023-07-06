@@ -4,6 +4,10 @@ import { ShoppingCartIcon } from '@heroicons/react/24/solid';
 const OrderCard = props => {
     const { id, quantity, title, imageUrl, price } = props;
 
+    const formatPrice = (price) => {
+        return price.toFixed(2); // Limitar a dos decimales
+      };
+
     return (
 
         <div className="grid grid-cols-5 grid-rows-2 h-20 text-white bg-[#454545] mb-3 rounded-lg">
@@ -20,7 +24,7 @@ const OrderCard = props => {
                 </span>
             </div>
             <div className="col-start-4 row-span-1 text-lg font-medium self-center"> 
-                ${price*(quantity||1)}
+                ${formatPrice(price*(quantity||1))}
             </div>
             <span className="col-start-5 row-start-1 row-span-2 justify-self-center self-center"> 
                 <XMarkIcon className="h-6 w-6 text-white cursor-pointer"/>
