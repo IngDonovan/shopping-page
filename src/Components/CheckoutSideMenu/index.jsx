@@ -49,9 +49,9 @@ const CheckoutSideMenu = () => {
             }
             </div>
             <div className='px-6'>
-                <p>
-                    <span>Total</span>
-                    <span>${totalPrice(cartProducts)}</span>
+                <p className='flex justify-between items-center'>
+                    <span className='font-light'>Total</span>
+                    <span className='font-medium text-2xl'>${totalPrice(cartProducts)}</span>
                 </p>
             </div>
         </aside>
