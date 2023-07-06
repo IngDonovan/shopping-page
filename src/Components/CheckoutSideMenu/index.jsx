@@ -23,8 +23,15 @@ const CheckoutSideMenu = () => {
     }
 
     const handleCheckout = () => {
+
+        const currentDate = new Date();
+
+        const formattedDate = `${currentDate.getDate()}.${currentDate.getMonth() + 1}.${currentDate.getFullYear()}`;
+        const formattedTime = `${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()}`;
+        const dateTime = `${formattedDate} ${formattedTime}`;
+
         const orderToAdd = {
-            date: '06.07.23',
+            date: dateTime,
             products: cartProducts,
             totalProducts: (cartProducts.length),
             totalPrice: totalPrice(cartProducts),
@@ -32,7 +39,7 @@ const CheckoutSideMenu = () => {
         setOrder([...order, orderToAdd]);
         console.log(orderToAdd);
         setCartProducts([]);
-        setCount([]);
+        setCount(0);
     }
     
     return (
