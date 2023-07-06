@@ -2,7 +2,7 @@ import { XMarkIcon } from '@heroicons/react/24/solid';
 import { ShoppingCartIcon } from '@heroicons/react/24/solid';
 
 const OrderCard = props => {
-    const { id, title, imageUrl, price } = props;
+    const { id, quantity, title, imageUrl, price } = props;
 
     return (
 
@@ -16,11 +16,11 @@ const OrderCard = props => {
             <div className="col-start-2 col-span-2 row-start-2 self-center ml-3"> 
                 <span className='flex'>
                     <ShoppingCartIcon className="h-5 w-5 text-white cursor-pointer" />
-                    {id}
+                    {quantity||1}
                 </span>
             </div>
             <div className="col-start-4 row-span-1 text-lg font-medium self-center"> 
-                ${price}
+                ${price*(quantity||1)}
             </div>
             <span className="col-start-5 row-start-1 row-span-2 justify-self-center self-center"> 
                 <XMarkIcon className="h-6 w-6 text-white cursor-pointer"/>

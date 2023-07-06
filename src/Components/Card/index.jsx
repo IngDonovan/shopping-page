@@ -23,10 +23,35 @@ const Card = ({data}) => {
     const addProductsToCart = (productData) => {
         
         setCount(count + 1);
-        setCartProducts([...cartProducts, productData]);
+
+        const existingProduct = cartProducts.find((product) => product.id === productData.id);
+
+        if (existingProduct) {
+            // Si el producto ya existe, aumenta la cantidad
+            const updatedProduct = {
+              ...existingProduct,
+              quantity: (existingProduct.quantity || 1) + (productData.quantity || 1),
+              
+            };
+            const updatedCartProducts = cartProducts.map((product) => {
+              if (product.id === productData.id) {
+                
+                return updatedProduct;
+              }
+              return product;
+            });
+            
+            setCartProducts(updatedCartProducts);
+          } else {
+            // Si el producto no existe, agrégalo al carrito
+            setCartProducts([...cartProducts, productData]);
+          }
+
+        // setCartProducts([...cartProducts, productData]);
         openCheckoutSideMenu();
-        
+
     }
+
 
     return (
         <article className="bg-[#454545] cursor-pointer w-60 h-60 rounded-lg shadow-[15px_15px_30px_rgba(25,25,25),-15px_-15px_30px_rgba(60,60,60)]">
