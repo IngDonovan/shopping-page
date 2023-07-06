@@ -5,7 +5,12 @@ import { XMarkIcon } from '@heroicons/react/24/solid';
 
 
 const CheckoutSideMenu = () => {
-    const { isCheckoutSideMenuOpen, closeCheckoutSideMenu, cartProducts } = useContext(ShoppingCartContext);
+    const { isCheckoutSideMenuOpen, closeCheckoutSideMenu, cartProducts, setCartProducts } = useContext(ShoppingCartContext);
+
+    const handleDelete = (id) => {
+        const filteredProducts = cartProducts.filter(product => product.id != id);
+        setCartProducts(filteredProducts)
+    }
     
     return (
         <aside className={`${isCheckoutSideMenuOpen ? 'flex' : 'hidden' } flex flex-col fixed right-0 bg-black/90 rounded-lg w-[360px] h-[calc(100vh-80px)] shadow-[15px_15px_30px_rgba(25,25,25),-15px_-15px_30px_rgba(60,60,60)] z-10`}>
@@ -25,10 +30,12 @@ const CheckoutSideMenu = () => {
                 cartProducts.map((product) => (
                     <OrderCard 
                         key={product.id}
+                        id={product.id}
                         quantity={product.quantity}
                         title={product.title}
                         imageUrl={product.image}
                         price={product.price}
+                        handleDelete={handleDelete}
                         />
                 ))
             }
