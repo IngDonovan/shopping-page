@@ -55,7 +55,7 @@ const CheckoutSideMenu = () => {
                     />
                 </span>
             </div>
-            <div className='overflow-y-scroll px-6'>
+            <div className='overflow-y-scroll px-6 flex-1'>
             {
                 cartProducts.map((product) => (
                     <OrderCard 
@@ -75,9 +75,9 @@ const CheckoutSideMenu = () => {
                     <span className='font-light'>Total</span>
                     <span className='font-medium text-2xl'>${totalPrice(cartProducts)}</span>
                 </p>
-                <button
+                <button className='w-full py-3 my-3 rounded-lg bg-white text-black font-medium text-xl'
                     onClick={() => handleCheckout()}>
-                    Checkout
+                    Confirm
                 </button>
             </div>
         </aside>
