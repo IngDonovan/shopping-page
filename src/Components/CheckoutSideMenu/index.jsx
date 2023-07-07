@@ -41,6 +41,7 @@ const CheckoutSideMenu = () => {
         console.log(orderToAdd);
         setCartProducts([]);
         setCount(0);
+        closeCheckoutSideMenu();
     }
     
     return (
