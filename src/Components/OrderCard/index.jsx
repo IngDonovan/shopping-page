@@ -3,10 +3,16 @@ import { ShoppingCartIcon } from '@heroicons/react/24/solid';
 
 const OrderCard = props => {
     const { id, quantity, title, imageUrl, price, handleDelete } = props;
+    let renderXMarkIcon;
 
     const formatPrice = (price) => {
         return price.toFixed(2); // Limitar a dos decimales
       };
+    
+    if (handleDelete) {
+        renderXMarkIcon = <XMarkIcon className="h-6 w-6 text-white cursor-pointer"
+        onClick={() => handleDelete(id)}/>;
+    }
 
     return (
 
@@ -27,9 +33,10 @@ const OrderCard = props => {
                 ${formatPrice(price*(quantity||1))}
             </div>
             <span className="col-start-5 row-start-1 row-span-2 justify-self-center self-center"> 
-                <XMarkIcon className="h-6 w-6 text-white cursor-pointer"
+                {/* <XMarkIcon className="h-6 w-6 text-white cursor-pointer"
                     onClick={() => handleDelete(id)}
-                />
+                /> */}
+                {renderXMarkIcon}
             </span>
         </div>
     );

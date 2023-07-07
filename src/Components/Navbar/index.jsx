@@ -13,12 +13,12 @@ const Navbar = () => {
     return(
         <nav className="flex justify-between items-center z-10 w-full py-5 px-8 text-sm font-light text-white bg-black">
             <div className="flex flex-wrap items-center gap-3">
-                <NavLink to='/shopping-page' className="font-bold text-lg">
+                <NavLink to='/' className="font-bold text-lg">
                 ShopING
                 </NavLink>
                 <ul className="sm:flex items-center gap-3 hidden ">
                     <li>
-                        <NavLink to='/shopping-page' className={classlink}>
+                        <NavLink to='/' className={classlink}>
                         All
                         </NavLink>
                     </li>
