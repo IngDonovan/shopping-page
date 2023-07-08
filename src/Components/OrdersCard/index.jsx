@@ -1,7 +1,7 @@
 import { XMarkIcon } from '@heroicons/react/24/solid';
 import { ShoppingCartIcon } from '@heroicons/react/24/solid';
 
-const OrderCard = props => {
+const OrdersCard = props => {
     const { id, quantity, title, imageUrl, price, handleDelete } = props;
 
     const formatPrice = (price) => {
@@ -38,4 +38,4 @@ const OrderCard = props => {
     );
 }
 
-export default OrderCard;
+export default OrdersCard;

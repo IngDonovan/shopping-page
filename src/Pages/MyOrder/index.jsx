@@ -12,7 +12,7 @@ function MyOrder() {
 
   return (
     <>
-      <Layout>
+      <Layout className= 'bg-[#212121]'>
         MyOrder
         <div className='flex flex-col w-80'>
           {
