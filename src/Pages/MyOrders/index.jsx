@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Layout from "../../Components/layout";
 import { ShoppingCartContext } from "../../Context";
 import OrdersCard from "../../Components/OrdersCard";
-import { ChevronLeftIcon } from '@heroicons/react/24/solid';
+
 
 function MyOrders() {
   const { 
