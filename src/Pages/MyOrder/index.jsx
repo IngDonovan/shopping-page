@@ -9,7 +9,8 @@ function MyOrder() {
   const { 
     order,
  } = useContext(ShoppingCartContext);
- console.log(order);
+
+
 
   return (
     <>
