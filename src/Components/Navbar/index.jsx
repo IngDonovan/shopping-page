@@ -4,7 +4,7 @@ import { ShoppingCartContext } from "../../Context/index";
 import { ShoppingCartIcon } from '@heroicons/react/24/solid';
 
 const Navbar = () => {
-    const {count, toggleCheckoutSideMenu} = useContext(ShoppingCartContext);
+    const {count, toggleCheckoutSideMenu, setSearchByCategory, searchByCategory} = useContext(ShoppingCartContext);
 
     const activeStyle = 'underline underline-offset-4';
     const classlink = ({isActive}) => isActive ? activeStyle : undefined;
@@ -18,32 +18,42 @@ const Navbar = () => {
                 </NavLink>
                 <ul className="sm:flex items-center gap-3 hidden ">
                     <li>
-                        <NavLink to='/' className={classlink}>
+                        <NavLink to='/' className={classlink}
+                            onClick={() => setSearchByCategory('')}>
                         All
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to='/clothes' className={classlink}>
+                        <NavLink 
+                            to='/clothes' 
+                            className={classlink}
+                            onClick={() => setSearchByCategory('cloth')}
+                            >
                         Clothes
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to='/electronics' className={classlink}>
+                        <NavLink to='/electronics' className={classlink}
+                            onClick={() => setSearchByCategory('elec')}
+                        >
                         Electronics
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to='/furnitures' className={classlink}>
+                        <NavLink to='/furnitures' className={classlink}
+                            onClick={() => setSearchByCategory('furnitures')}>
                         Furnitures
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to='/toys' className={classlink}>
+                        <NavLink to='/toys' className={classlink}
+                            onClick={() => setSearchByCategory('toys')}>
                         Toys
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to='/others' className={classlink}>
+                        <NavLink to='/others' className={classlink}
+                            onClick={() => setSearchByCategory('others')}>
                         Others
                         </NavLink>
                     </li>

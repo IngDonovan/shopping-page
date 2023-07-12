@@ -13,33 +13,47 @@ function Home() {
     setItems,
     searchByTitle,
     setSearchByTitle,
+    searchByCategory,
     filteredItems,
     setFilteredItems,
   } = useContext(ShoppingCartContext);
   
+  // const renderView = () => {
+  //   if ( searchByTitle?.length > 0 ) {
+  //     if (filteredItems?.length > 0) {
+  //       return ( 
+  //         filteredItems?.map((item) => (
+  //             <Card key={item.id} data={item} />
+  //           )
+  //         )
+  //       )
+  //     } else {
+  //       return (
+  //         <div>Nothing</div>
+  //       )
+  //     }
+  //   }else {
+  //     return(
+  //       items?.map((item) => (
+  //           <Card key={item.id} data={item} />
+  //         )
+  //       )
+  //     )
+  //   }
+  // }
   const renderView = () => {
-    if ( searchByTitle?.length > 0 ) {
-      if (filteredItems?.length > 0) {
-        return ( 
-          filteredItems?.map((item) => (
-              <Card key={item.id} data={item} />
-            )
-          )
-        )
-      } else {
-        return (
-          <div>Nothing</div>
-        )
-      }
-    }else {
-      return(
-        items?.map((item) => (
-            <Card key={item.id} data={item} />
-          )
-        )
-      )
+    const itemsToRender = (searchByTitle?.length > 0 || searchByCategory?.length > 0)
+      ? filteredItems
+      : items;
+
+    if (itemsToRender?.length > 0) {
+      return itemsToRender.map(item => (
+        <Card key={item.id} data={item} />
+      ));
+    } else {
+      return <p>No Results Found</p>;
     }
-  }
+  };
 
     return (
        <Layout>
