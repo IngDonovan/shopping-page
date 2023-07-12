@@ -14,7 +14,7 @@ function MyOrders() {
     return (
       <>
         <Layout>
-          <div className="flex justify-center relative w-80">
+          <div className="flex justify-center relative w-80 my-3">
             <h1>MyOrders</h1>
           </div>
           
