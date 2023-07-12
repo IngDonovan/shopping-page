@@ -13,7 +13,33 @@ function Home() {
     setItems,
     searchByTitle,
     setSearchByTitle,
+    filteredItems,
+    setFilteredItems,
   } = useContext(ShoppingCartContext);
+  
+  const renderView = () => {
+    if ( searchByTitle?.length > 0 ) {
+      if (filteredItems?.length > 0) {
+        return ( 
+          filteredItems?.map((item) => (
+              <Card key={item.id} data={item} />
+            )
+          )
+        )
+      } else {
+        return (
+          <div>Nothing</div>
+        )
+      }
+    }else {
+      return(
+        items?.map((item) => (
+            <Card key={item.id} data={item} />
+          )
+        )
+      )
+    }
+  }
 
     return (
        <Layout>
@@ -25,14 +51,8 @@ function Home() {
             placeholder="Search a Product"
             onChange={(event) => setSearchByTitle(event.target.value)}
           />
-          <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 my-4   ">
-          {
-            items?.map((item) => 
-              (<Card key={item.id} data={item} />
-              )
-            )
-          }
-
+          <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 my-4 text-white">
+          {renderView()}
           </div>
         <ProductDetail />        
       </Layout>

@@ -7,14 +7,14 @@ export const ShoppingCartProvider = ({children}) => {
 
     //Get Products
     const [items, setItems] = useState(null);
+
+    //filtered Items
+    const [filteredItems, setFilteredItems] = useState('');
+
     //Get Products By Title
     const [searchByTitle, setSearchByTitle] = useState(null);
-    console.log(searchByTitle);
-
+    
     useEffect(() => {
-        // fetch('https://fakestoreapi.com/products?')
-        //   .then(response => response.json())
-        //   .then(data => setItems(data))
         const fetchData = async () => {
         try {
             const response = await fetch(`${ApiUrl}/products?`)
@@ -25,7 +25,15 @@ export const ShoppingCartProvider = ({children}) => {
         }
         }
         fetchData()
-    }, [])
+    }, []);
+
+    const filteredItemsByTitle = (items, searchByTitle) => {
+        return items?.filter(item => item.title.toLowerCase().includes(searchByTitle.toLocaleLowerCase()) )
+    };
+    useEffect(() => {
+        if (searchByTitle) setFilteredItems(filteredItemsByTitle(items,searchByTitle))
+    }, [items, searchByTitle]);
+    // console.log(filteredItems);
 
     //Shopping Cart · Increment quantity
     const [count, setCount] = useState(0);
@@ -59,6 +67,8 @@ export const ShoppingCartProvider = ({children}) => {
                 setItems,
                 searchByTitle,
                 setSearchByTitle,
+                filteredItems,
+                setFilteredItems,
                 count,
                 setCount,
                 isProductDetailOpen,
