@@ -1,8 +1,32 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
+import { ApiUrl } from "../Api";
 
 export const ShoppingCartContext = createContext();
 
 export const ShoppingCartProvider = ({children}) => {
+
+    //Get Products
+    const [items, setItems] = useState(null);
+    //Get Products By Title
+    const [searchByTitle, setSearchByTitle] = useState(null);
+    console.log(searchByTitle);
+
+    useEffect(() => {
+        // fetch('https://fakestoreapi.com/products?')
+        //   .then(response => response.json())
+        //   .then(data => setItems(data))
+        const fetchData = async () => {
+        try {
+            const response = await fetch(`${ApiUrl}/products?`)
+            const data = await response.json()
+            setItems(data)
+        } catch (error) {
+            console.error(`Oh no, ocurrió un error: ${error}`);
+        }
+        }
+        fetchData()
+    }, [])
+
     //Shopping Cart · Increment quantity
     const [count, setCount] = useState(0);
 
@@ -16,7 +40,6 @@ export const ShoppingCartProvider = ({children}) => {
      const openCheckoutSideMenu = () => setIsCheckoutSideMenuOpen(true)
      const closeCheckoutSideMenu = () => setIsCheckoutSideMenuOpen(false)
      
-
     //Product Detail · Show Product
     const [productToShow, setProductToShow] = useState({});
 
@@ -32,6 +55,10 @@ export const ShoppingCartProvider = ({children}) => {
     return(
         <ShoppingCartContext.Provider 
             value={{
+                items,
+                setItems,
+                searchByTitle,
+                setSearchByTitle,
                 count,
                 setCount,
                 isProductDetailOpen,
