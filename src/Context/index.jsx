@@ -78,9 +78,9 @@ export const ShoppingCartProvider = ({children}) => {
         if (searchByTitle && searchByCategory) setFilteredItems(filteredItemsByCatAndTitle(items,searchByTitle));
 
     }, [items, searchByTitle, searchByCategory]);
-    console.log(filteredItems);
-    console.log('Title',searchByTitle);
-    console.log('Category',searchByCategory);
+    // console.log(filteredItems);
+    // console.log('Title',searchByTitle);
+    // console.log('Category',searchByCategory);
 
 
     //Shopping Cart · Increment quantity
