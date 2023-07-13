@@ -68,10 +68,15 @@ export const ShoppingCartProvider = ({children}) => {
     const filteredItemsByCategory = (items, searchByCategory) => {
         return items?.filter(item => item.category.toLowerCase().includes(searchByCategory.toLocaleLowerCase()) )
     };
+    const filteredItemsByCatAndTitle = (items, searchByTitle) => {
+        return items?.filter(item => item.title.toLowerCase().includes(searchByTitle.toLocaleLowerCase()) )
+    };
 
     useEffect(() => {
-        if (searchByTitle) setFilteredItems(filteredItemsByTitle(items,searchByTitle))
-        if (searchByCategory) setFilteredItems(filteredItemsByCategory(items,searchByCategory))
+        if (searchByTitle) setFilteredItems(filteredItemsByTitle(items,searchByTitle));
+        if (searchByCategory) setFilteredItems(filteredItemsByCategory(items,searchByCategory));
+        if (searchByTitle && searchByCategory) setFilteredItems(filteredItemsByCatAndTitle(items,searchByTitle));
+
     }, [items, searchByTitle, searchByCategory]);
     console.log(filteredItems);
     console.log('Title',searchByTitle);
