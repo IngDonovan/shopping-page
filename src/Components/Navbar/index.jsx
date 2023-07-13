@@ -4,7 +4,7 @@ import { ShoppingCartContext } from "../../Context/index";
 import { ShoppingCartIcon } from '@heroicons/react/24/solid';
 
 const Navbar = () => {
-    const {count, toggleCheckoutSideMenu, setSearchByCategory, searchByCategory} = useContext(ShoppingCartContext);
+    const {count, toggleCheckoutSideMenu, setSearchByCategory, searchByCategory, cartProducts} = useContext(ShoppingCartContext);
 
     const activeStyle = 'underline underline-offset-4';
     const classlink = ({isActive}) => isActive ? activeStyle : undefined;
@@ -85,6 +85,7 @@ const Navbar = () => {
                     <li className="flex items-center gap-2">
                         <ShoppingCartIcon className="h-6 w-6 text-white cursor-pointer" 
                         onClick={toggleCheckoutSideMenu}/> 
+                        {/* {cartProducts.length} */}
                         {count}
                     </li>
                 </ul>
