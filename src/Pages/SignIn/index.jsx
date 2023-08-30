@@ -2,7 +2,7 @@ import Layout from "../../Components/layout";
 import './styles.css';
 
 function SignIn() {
-
+ 
     return (
       <>
         <Layout>
@@ -12,7 +12,7 @@ function SignIn() {
               <input type="text" name="" required="" />
               <label>Username</label>
             </div>
-            <div class="user-box">
+            <div className="user-box">
               <input type="password" name="" required="" />
               <label>Password</label>
             </div><center>
